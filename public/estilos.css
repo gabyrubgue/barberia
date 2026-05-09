@@ -684,3 +684,80 @@ button:hover {
     text-align: left;
   }
 }
+.hero {
+  position: relative;
+  min-height: 88vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background-image:
+    url("img/barberia.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      rgba(0,0,0,.75),
+      rgba(0,0,0,.70)
+    );
+}
+
+.hero-contenido {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h2 {
+  font-size: clamp(42px, 8vw, 72px);
+  margin-bottom: 12px;
+  font-weight: 900;
+}
+
+.hero .intro {
+  color: #e2e2e2;
+  font-size: 18px;
+  max-width: 700px;
+}
+
+.hero-botones {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+.btn-hero,
+.btn-secundario-hero {
+  padding: 14px 24px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: .25s ease;
+}
+
+.btn-hero {
+  background: #d8b64a;
+  color: #111;
+}
+
+.btn-hero:hover {
+  transform: translateY(-3px);
+  background: #ebc85b;
+}
+
+.btn-secundario-hero {
+  border: 1px solid white;
+  color: white;
+}
+
+.btn-secundario-hero:hover {
+  background: white;
+  color: black;
+}
