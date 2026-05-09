@@ -24,16 +24,7 @@ body {
   padding: 0 16px;
 }
 
-/* HEADER */
-.encabezado{
-  background: #050505;
-  padding: 8px 0;
-  position: relative;
-  z-index: 100;
-  width: 100%;
-  height: 200px; /* antes 250px */
-  border-bottom: 1px solid rgba(216,182,74,.2);
-}
+
 
 /* CONTENEDOR */
 .encabezado .contenedor{
@@ -50,15 +41,6 @@ body {
   justify-content: center;
 }
 
-.marca h1 {
-  margin: 0;
-  font-size: 28px;
-}
-
-.marca p {
-  margin: 4px 0 0;
-  color: var(--gris-claro);
-}
 
 
 
@@ -71,7 +53,6 @@ h2 {
   text-align: center;
 }
 
-.intro,
 .bloque-texto {
   width: min(100%, 780px);
   margin: 0 auto 24px;
@@ -171,36 +152,8 @@ button:hover {
   padding: 16px;
 }
 
-.contacto {
-  width: min(100%, 760px);
-  margin: 0 auto;
-  border: 1px solid var(--gris-claro);
-  padding: 20px;
-  background-color: #fafafa;
-}
 
-.pie {
-  padding: 20px 0;
-  text-align: center;
-  background-color: var(--negro);
-  color: var(--blanco);
-  font-size: 14px;
-}
 
-@media (max-width: 640px) {
-  .marca h1 {
-    font-size: 24px;
-  }
-
-  .nav {
-    gap: 8px;
-  }
-
-  .nav a {
-    padding: 7px 10px;
-    font-size: 14px;
-  }
-}
 
 /* Estilos especificos para el flujo avanzado de reserva */
 .body-reserva {
@@ -681,16 +634,6 @@ button:hover {
   }
 }
 
-.hero{
-  position: relative;
-  height: 95vh;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
 /* VIDEO */
 .video-fondo{
   position: absolute;
@@ -711,6 +654,21 @@ button:hover {
   background: rgba(0,0,0,0.55);
   z-index: -1;
 }
+
+
+
+
+.hero{
+  position: relative;
+  height: 95vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
 
 /* CONTENIDO */
 .hero-contenido{
@@ -798,15 +756,11 @@ button:hover {
 .logo{
   width: 140px;
   height: 150px;
-
   border: 3px solid #d8b64a;
   box-shadow: 0 0 50px rgba(216,182,74,.35);
-
   object-fit: cover;
   border-radius: 50%;
-
   margin-left: -180px;
-
   margin-top: 10px; /* QUITAR el 50px */
 }
 
@@ -858,38 +812,26 @@ button:hover {
 /* LINKS */
 .nav a{
   color: white;
-
   text-decoration: none;
-
   font-weight: 600;
-
   font-family: 'Montserrat', sans-serif;
-
   padding: 14px 20px;
-
   position: relative;
-
   transition: .3s ease;
 }
 
 /* EFECTO LINEA */
 .nav a::after{
   content: "";
-
   position: absolute;
-
   left: 0;
   bottom: 0;
-
   width: 0%;
   height: 3px;
-
   background: #d8b64a;
-
   transition: .3s ease;
 }
 
-.nav a:hover::after,
 .nav a.activo::after{
   width: 100%;
 }
@@ -900,40 +842,11 @@ button:hover {
 /* MENU */
 .nav{
   margin-top: -27px; /* subir menu */
-
   display: flex;
-
   gap: 12px;
-
   padding-bottom: 0;
-  
-  
-}
-.nav a {
-  color: var(--blanco);
-  text-decoration: none;
-  padding: 10px 14px;
-  position: relative;
-  transition: .25s ease;
-  font-weight: 600;
 }
 
-
-.nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0%;
-  height: 2px;
-  background: #d8b64a;
-  transition: .25s ease;
-}
-
-.nav a:hover::after,
-.nav a.activo::after {
-  width: 100%;
-}
 
 .nav a:hover {
   color: #d8b64a;
@@ -1029,3 +942,31 @@ button:hover {
     font-size: 1.6rem;
   }
 }
+
+
+@media (max-width: 640px) {
+  .marca h1 {
+    font-size: 24px;
+  }
+
+  .nav {
+    gap: 8px;
+  }
+
+  .nav a {
+    padding: 7px 10px;
+    font-size: 14px;
+  }
+}
+
+/* HEADER */
+.encabezado{
+  background: #050505;
+  padding: 8px 0;
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  height: 200px; /* antes 250px */
+  border-bottom: 1px solid rgba(216,182,74,.2);
+}
+
