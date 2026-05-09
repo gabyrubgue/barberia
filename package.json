@@ -1,0 +1,19 @@
+{
+  "name": "barberia-norte",
+  "version": "1.0.0",
+  "description": "Sitio web local para Barberia Norte con reservas en JSON",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "barberia",
+    "express",
+    "reservas"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <rect width="600" height="400" fill="#222222"/>
+  <rect x="120" y="90" width="360" height="220" fill="#efefef"/>
+  <line x1="190" y1="130" x2="410" y2="130" stroke="#111111" stroke-width="14"/>
+  <line x1="190" y1="190" x2="410" y2="190" stroke="#111111" stroke-width="14"/>
+  <line x1="190" y1="250" x2="410" y2="250" stroke="#111111" stroke-width="14"/>
+  <text x="300" y="352" text-anchor="middle" font-size="28" fill="#ffffff" font-family="Arial, Helvetica, sans-serif">Herramientas</text>
+</svg>

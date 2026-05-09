@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barberia Norte | Agenda tu cita</title>
+  <link rel="stylesheet" href="estilos.css">
+  <script defer src="script.js"></script>
+</head>
+<body class="body-reserva">
+  <header class="encabezado">
+    <div class="contenedor">
+      <div class="marca">
+        <h1>Barberia Norte</h1>
+        <p>Corte preciso, estilo seguro</p>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Inicio</a>
+        <a href="servicios.html">Servicios</a>
+        <a class="activo" href="reserva.html">Reservas</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="galeria.html">Galeria</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="reserva-main">
+    <div class="contenedor reserva-shell">
+      <section class="reserva-hero">
+        <h2>Agenda tu <span>cita ahora</span></h2>
+        <p>
+          Selecciona servicio, fecha, datos y confirma. La reserva final se guarda
+          en el archivo <strong>reservas.json</strong> del servidor local.
+        </p>
+      </section>
+
+      <ol class="wizard-steps" aria-label="Pasos de reserva">
+        <li class="wizard-step activo" data-step-indicator="1">
+          <span class="step-badge">1</span>
+          <span>Servicio</span>
+        </li>
+        <li class="wizard-step" data-step-indicator="2">
+          <span class="step-badge">2</span>
+          <span>Fecha y hora</span>
+        </li>
+        <li class="wizard-step" data-step-indicator="3">
+          <span class="step-badge">3</span>
+          <span>Datos</span>
+        </li>
+        <li class="wizard-step" data-step-indicator="4">
+          <span class="step-badge">4</span>
+          <span>Confirmar</span>
+        </li>
+      </ol>
+
+      <form id="reserva-wizard" class="wizard-card" novalidate>
+        <section class="wizard-pane" data-step="1">
+          <h3>Que servicio deseas?</h3>
+          <p class="wizard-text">Puedes seleccionar mas de uno y el precio se acumula.</p>
+
+          <div id="servicios-grid" class="servicios-grid"></div>
+
+          <div class="grupo-campo">
+            <label for="barbero">Barbero preferido (opcional)</label>
+            <select id="barbero" name="barbero"></select>
+          </div>
+
+          <div class="totales-box">
+            <p><strong>Servicios seleccionados:</strong> <span id="contador-servicios">0</span></p>
+            <p><strong>Total estimado:</strong> <span id="total-servicios">$0</span></p>
+          </div>
+
+          <div class="wizard-actions end">
+            <button type="button" id="btn-step-1-next" class="btn-primario">Siguiente - Fecha y hora</button>
+          </div>
+        </section>
+
+        <section class="wizard-pane oculto" data-step="2">
+          <h3>Cuando te vemos?</h3>
+          <p class="wizard-text">Selecciona fecha y luego una hora disponible.</p>
+
+          <div class="calendario">
+            <div class="calendario-head">
+              <button type="button" id="prev-month" class="btn-icon" aria-label="Mes anterior">&lt;</button>
+              <h4 id="month-label"></h4>
+              <button type="button" id="next-month" class="btn-icon" aria-label="Mes siguiente">&gt;</button>
+            </div>
+            <div id="calendar-grid" class="calendar-grid"></div>
+          </div>
+
+          <p class="subtitulo-horarios">Horarios</p>
+          <div id="horarios-list" class="horarios-list"></div>
+          <p class="ocupado-hint">Los horarios marcados como "ocupado" ya existen en reservas.json y no se pueden tomar.</p>
+
+          <div class="agenda-dia">
+            <h4>Reservas ya guardadas para la fecha seleccionada</h4>
+            <ul id="reservas-dia-list" class="reservas-dia-list"></ul>
+          </div>
+
+          <div class="wizard-actions">
+            <button type="button" class="btn-secundario" data-go-step="1">Atras</button>
+            <button type="button" id="btn-step-2-next" class="btn-primario">Siguiente - Mis datos</button>
+          </div>
+        </section>
+
+        <section class="wizard-pane oculto" data-step="3">
+          <h3>Tus datos de contacto</h3>
+          <p class="wizard-text">Estos datos se guardan en reservas.json junto con la cita.</p>
+
+          <div class="contacto-grid">
+            <div class="grupo-campo">
+              <label for="cliente-nombre">Nombre</label>
+              <input type="text" id="cliente-nombre" required>
+            </div>
+            <div class="grupo-campo">
+              <label for="cliente-apellido">Apellido</label>
+              <input type="text" id="cliente-apellido" required>
+            </div>
+            <div class="grupo-campo">
+              <label for="cliente-telefono">Telefono / WhatsApp</label>
+              <input type="tel" id="cliente-telefono" required>
+            </div>
+            <div class="grupo-campo">
+              <label for="cliente-correo">Correo (opcional)</label>
+              <input type="email" id="cliente-correo">
+            </div>
+          </div>
+
+          <div class="grupo-campo">
+            <label for="cliente-nota">Nota para el barbero (opcional)</label>
+            <textarea id="cliente-nota" rows="4"></textarea>
+          </div>
+
+          <div class="wizard-actions">
+            <button type="button" class="btn-secundario" data-go-step="2">Atras</button>
+            <button type="button" id="btn-step-3-next" class="btn-primario">Revisar reserva</button>
+          </div>
+        </section>
+
+        <section class="wizard-pane oculto" data-step="4">
+          <h3>Confirma tu reserva</h3>
+          <p class="wizard-text">Revisa los datos antes de guardar definitivamente en reservas.json.</p>
+
+          <div class="resumen-tabla">
+            <div class="resumen-fila">
+              <span>Servicio(s)</span>
+              <strong id="resumen-servicios"></strong>
+            </div>
+            <div class="resumen-fila">
+              <span>Barbero</span>
+              <strong id="resumen-barbero"></strong>
+            </div>
+            <div class="resumen-fila">
+              <span>Fecha</span>
+              <strong id="resumen-fecha"></strong>
+            </div>
+            <div class="resumen-fila">
+              <span>Hora</span>
+              <strong id="resumen-hora"></strong>
+            </div>
+            <div class="resumen-fila">
+              <span>Cliente</span>
+              <strong id="resumen-cliente"></strong>
+            </div>
+            <div class="resumen-fila">
+              <span>Telefono</span>
+              <strong id="resumen-telefono"></strong>
+            </div>
+            <div class="resumen-fila total">
+              <span>Total estimado</span>
+              <strong id="resumen-total"></strong>
+            </div>
+          </div>
+
+          <p class="json-nota">
+            Al confirmar, este registro se agrega en <strong>reservas.json</strong>. Los horarios ocupados
+            no pueden editarse ni duplicarse.
+          </p>
+
+          <div class="wizard-actions">
+            <button type="button" class="btn-secundario" data-go-step="3">Atras</button>
+            <button type="submit" class="btn-confirmar">Confirmar cita</button>
+          </div>
+        </section>
+
+        <p id="mensaje-reserva" class="mensaje"></p>
+      </form>
+    </div>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      Barberia Norte - Corte preciso, estilo seguro
+    </div>
+  </footer>
+</body>
+</html>

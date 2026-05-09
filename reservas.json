@@ -1,0 +1,41 @@
+[
+  {
+    "nombre": "ukk",
+    "telefono": "ukky",
+    "servicio": "Corte clasico",
+    "fecha": "2026-03-03",
+    "hora": "17:30"
+  },
+  {
+    "id": "res-1778114852602",
+    "fecha": "2026-05-12",
+    "hora": "08:00",
+    "barbero": "Andres Torres - Maestro en Barba",
+    "servicios": [
+      {
+        "id": "combo-ejecutivo",
+        "nombre": "Combo Ejecutivo",
+        "precio": 75000,
+        "duracion": "60-80 min"
+      },
+      {
+        "id": "corte-clasico",
+        "nombre": "Corte Clasico",
+        "precio": 45000,
+        "duracion": "30-45 min"
+      }
+    ],
+    "total": 120000,
+    "cliente": {
+      "nombre": "h",
+      "apellido": "gh",
+      "telefono": "g",
+      "correo": "g",
+      "nota": "g"
+    },
+    "creadoEn": "2026-05-07T00:47:32.602Z",
+    "nombre": "h gh",
+    "telefono": "g",
+    "servicio": "Combo Ejecutivo, Corte Clasico"
+  }
+]
