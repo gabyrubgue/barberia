@@ -24,18 +24,30 @@ body {
   padding: 0 16px;
 }
 
-.encabezado {
-  background-color: var(--negro);
-  color: var(--blanco);
-  padding: 20px 0;
+/* HEADER */
+.encabezado{
+  background: #050505;
+  padding: 8px 0;
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  height: 200px; /* antes 250px */
+  border-bottom: 1px solid rgba(216,182,74,.2);
 }
 
-.encabezado .contenedor {
+/* CONTENEDOR */
+.encabezado .contenedor{
+  width: min(100%, 1350px);
+  margin: 0 auto;
+
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  padding-left: 30px;
+
+  justify-content: center;
 }
 
 .marca h1 {
@@ -48,45 +60,7 @@ body {
   color: var(--gris-claro);
 }
 
-.nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
 
-.nav a {
-  color: var(--blanco);
-  text-decoration: none;
-  padding: 10px 14px;
-  position: relative;
-  transition: .25s ease;
-  font-weight: 600;
-}
-
-.nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0%;
-  height: 2px;
-  background: #d8b64a;
-  transition: .25s ease;
-}
-
-.nav a:hover::after,
-.nav a.activo::after {
-  width: 100%;
-}
-
-.nav a:hover {
-  color: #d8b64a;
-}
-
-.nav a:hover,
-.nav a.activo {
-  background-color: var(--gris-oscuro);
-}
 
 main {
   padding: 32px 0 40px;
@@ -99,7 +73,7 @@ h2 {
 
 .intro,
 .bloque-texto {
-  width: min(100%, 760px);
+  width: min(100%, 780px);
   margin: 0 auto 24px;
   text-align: center;
 }
@@ -706,61 +680,77 @@ button:hover {
     text-align: left;
   }
 }
-.hero {
+
+.hero{
   position: relative;
-  min-height: 88vh;
-  display: grid;
-  place-items: center;
-  text-align: center;
-  background-image:
-    url("img/barberia.jpg");
-  background-size: cover;
-  background-position: center;
-  color: white;
+  height: 95vh;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-.overlay {
+/* VIDEO */
+.video-fondo{
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  z-index: -2;
+}
+
+/* CAPA OSCURA */
+.overlay{
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(
-      rgba(0,0,0,.75),
-      rgba(0,0,0,.70)
-    );
+  background: rgba(0,0,0,0.55);
+  z-index: -1;
 }
 
-.hero-contenido {
+/* CONTENIDO */
+.hero-contenido{
+  color: white;
   position: relative;
   z-index: 2;
 }
 
-.hero h2 {
-  font-size: clamp(42px, 8vw, 72px);
-  margin-bottom: 12px;
-  font-weight: 900;
+.hero h2{
+ 
+  font-size: 3.5rem;
+  font-weight: 720;
+
+}
+
+.intro{
+  font-size: 2.1rem;
 }
 
 .hero .intro {
   color: #e2e2e2;
-  font-size: 18px;
+  font-size: 25px;
   max-width: 700px;
 }
 
 .hero-botones {
   display: flex;
   justify-content: center;
-  gap: 14px;
-  margin-top: 28px;
+  gap: 35px;
+  margin-top: 35px;
   flex-wrap: wrap;
 }
 
 .btn-hero,
 .btn-secundario-hero {
-  padding: 14px 24px;
+  padding: 18px 28px;
   border-radius: 999px;
   text-decoration: none;
   font-weight: bold;
+  font-size: 18px;
   transition: .25s ease;
 }
 
@@ -782,4 +772,260 @@ button:hover {
 .btn-secundario-hero:hover {
   background: white;
   color: black;
+}
+
+.tarjeta,
+.contacto,
+.seccion-nosotros,
+.lista-servicios li,
+.wizard-card {
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.08);
+}
+
+
+
+/* BLOQUE LOGO + TITULO */
+.marca{
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  margin-left: -80px;
+}
+
+/* LOGO */
+.logo{
+  width: 140px;
+  height: 150px;
+
+  border: 3px solid #d8b64a;
+  box-shadow: 0 0 50px rgba(216,182,74,.35);
+
+  object-fit: cover;
+  border-radius: 50%;
+
+  margin-left: -180px;
+
+  margin-top: 10px; /* QUITAR el 50px */
+}
+
+
+
+/* CONTENEDOR TEXTO */
+.marca div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* TITULO */
+.marca h1{
+  margin: 0;
+
+  color: white;
+
+  font-size: 4rem;
+
+  line-height: .9;
+
+  font-family: 'Cinzel', serif;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  text-shadow: 0 0 15px rgba(255,255,255,.1);
+}
+
+/* SLOGAN */
+.marca p{
+  margin-top: 10px;
+
+  color: #d8b64a;
+
+  font-size: 1.1rem;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+
+/* LINKS */
+.nav a{
+  color: white;
+
+  text-decoration: none;
+
+  font-weight: 600;
+
+  font-family: 'Montserrat', sans-serif;
+
+  padding: 14px 20px;
+
+  position: relative;
+
+  transition: .3s ease;
+}
+
+/* EFECTO LINEA */
+.nav a::after{
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 0%;
+  height: 3px;
+
+  background: #d8b64a;
+
+  transition: .3s ease;
+}
+
+.nav a:hover::after,
+.nav a.activo::after{
+  width: 100%;
+}
+
+.nav a:hover{
+  color: #d8b64a;
+}
+/* MENU */
+.nav{
+  margin-top: -27px; /* subir menu */
+
+  display: flex;
+
+  gap: 12px;
+
+  padding-bottom: 0;
+  
+  
+}
+.nav a {
+  color: var(--blanco);
+  text-decoration: none;
+  padding: 10px 14px;
+  position: relative;
+  transition: .25s ease;
+  font-weight: 600;
+}
+
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: #d8b64a;
+  transition: .25s ease;
+}
+
+.nav a:hover::after,
+.nav a.activo::after {
+  width: 100%;
+}
+
+.nav a:hover {
+  color: #d8b64a;
+}
+
+
+.nav a:hover,
+.nav a.activo {
+  background-color: var(--gris-oscuro);
+}
+
+
+/* FOOTER NUEVO */
+.pie{
+  background: #050505;
+
+  color: white;
+
+  padding: 50px 0 30px;
+
+  border-top: 1px solid rgba(216,182,74,.2);
+}
+
+.footer-contenido{
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 60px;
+
+  flex-wrap: wrap;
+}
+
+/* TITULO */
+.footer-marca h3{
+  margin: 0;
+
+  font-size: 2rem;
+
+  color: #ffffff;
+
+  font-family: 'Cinzel', serif;
+
+  letter-spacing: 1px;
+  margin-top: 50px;
+}
+
+.footer-marca p{
+  color: #d8b64a;
+
+  margin-top: 5px;
+
+  font-size: 20px;
+}
+
+/* CONTACTO */
+.footer-contacto h4{
+  margin-top: 0;
+
+  margin-bottom: 14px;
+
+  color: #d8b64a;
+
+  font-size: 1.2rem;
+
+  text-transform: uppercase;
+
+  letter-spacing: 2px;
+}
+
+.footer-contacto p{
+  margin: 6px 0;
+
+  color: #d9d9d9;
+
+  font-size: 15px;
+}
+
+.footer-contacto strong{
+  color: white;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px){
+
+  .footer-contenido{
+    flex-direction: column;
+
+    gap: 30px;
+  }
+
+  .footer-marca h3{
+    font-size: 1.6rem;
+  }
 }

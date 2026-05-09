@@ -4,12 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Barberia Norte | Inicio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
   <header class="encabezado">
     <div class="contenedor">
       <div class="marca">
+        <img src="./img/Logo.jpeg" alt="Logo Barberia Norte" class="logo">
         <h1>Barberia Norte</h1>
         <p>Corte preciso, estilo seguro</p>
       </div>
@@ -25,6 +27,10 @@
   </header>
 
   <main class="hero">
+    <video class="video-fondo" autoplay muted loop playsinline>
+    <source src="./vid/video-barberia.mp4" type="video/mp4">
+</video>
+
   <div class="overlay"></div>
 
   <div class="contenedor hero-contenido">
@@ -40,12 +46,34 @@
       <a href="galeria.html" class="btn-secundario-hero">Ver trabajos</a>
     </div>
   </div>
+
 </main>
 
   <footer class="pie">
-    <div class="contenedor">
-      Barberia Norte - Corte preciso, estilo seguro
+  <div class="contenedor footer-contenido">
+
+    <div class="footer-marca">
+      <h3>Barberia Norte</h3>
+      <p>Corte preciso, estilo seguro</p>
     </div>
-  </footer>
+
+    <div class="footer-contacto">
+      <h4>Contacto</h4>
+
+      <p><strong>Teléfono:</strong> +57 310 555 1987</p>
+
+      <p><strong>Dirección:</strong> Calle 45 #18-20, Barrio Norte</p>
+
+      <p><strong>Horario:</strong></p>
+
+      <p>Lunes a Viernes: 9:00 a.m. - 8:00 p.m.</p>
+
+      <p>Sábados: 9:00 a.m. - 6:00 p.m.</p>
+
+      <p>Domingos: Cerrado</p>
+    </div>
+
+  </div>
+</footer>
 </body>
 </html>
