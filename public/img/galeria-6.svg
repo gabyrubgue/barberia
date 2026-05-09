@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
-  <rect width="600" height="400" fill="#121212"/>
-  <polygon points="120,290 190,110 260,290" fill="#d7d7d7"/>
-  <polygon points="260,290 330,130 400,290" fill="#bbbbbb"/>
-  <polygon points="400,290 470,95 540,290" fill="#9a9a9a"/>
-  <text x="300" y="355" text-anchor="middle" font-size="28" fill="#ffffff" font-family="Arial, Helvetica, sans-serif">Corte moderno</text>
-</svg>
