@@ -57,8 +57,30 @@ body {
 .nav a {
   color: var(--blanco);
   text-decoration: none;
-  border: 1px solid var(--gris);
-  padding: 8px 12px;
+  padding: 10px 14px;
+  position: relative;
+  transition: .25s ease;
+  font-weight: 600;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: #d8b64a;
+  transition: .25s ease;
+}
+
+.nav a:hover::after,
+.nav a.activo::after {
+  width: 100%;
+}
+
+.nav a:hover {
+  color: #d8b64a;
 }
 
 .nav a:hover,
